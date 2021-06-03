@@ -10,14 +10,14 @@ COLOR_BLUE='\033[1;34m'
 COLOR_RESET='\033[0m'
 
 PROJECT='A3 - Snake-Pro'
-PORT=10003
+PORT=443
 TRIES=480
 LOADING=0
 
 printf "${COLOR_YELLOW}SecDevLabs: 👀  Your app is starting!\n${COLOR_RESET}"
 
 while : ; do
-    `curl -s -f http://localhost:$PORT/login > /dev/null`
+    `curl -s -f --insecure https://localhost:$PORT/login > /dev/null`
     if [ $? == 0 ] ; then
         break
     fi
